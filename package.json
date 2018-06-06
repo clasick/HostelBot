@@ -4,5 +4,8 @@
   "description": "",
   "main": "index.js",
   "author": "vigneshk",
-  "dependencies": {}
+  "dependencies": { "discord.js" : "11.3.2"},
+  "engines": {
+    "node": "10.2.1"
+  }
 }
