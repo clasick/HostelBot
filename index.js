@@ -28,21 +28,30 @@ function getItem(day, x) {
   var checkingTheTime = [Math.abs(7 - x), Math.abs(13 - x), Math.abs(19 - x)];
 
   var whichMeal = 99;
+  var whichMealIndex = 99;
+
+  console.log('The hour is ' + x)
+
+  console.log("The length of the array is " + checkingTheTime.length)
 
   for (var i = 0; i < checkingTheTime.length; i++) {
-    if (checkingTheTime[i] < whichMeal)
+    console.log("checking if " + checkingTheTime[i] + " is less than " + whichMeal)
+    if (checkingTheTime[i] < whichMeal) {
+      console.log(checkingTheTime[i] + " is less than " + whichMeal)
       whichMeal = checkingTheTime[i];
+      whichMealIndex = i;
+    }
 
   }
 
-  console.log("Getting the meal for " + whichMeal + " on " + day);
+  console.log("Getting the meal for " + whichMealIndex + " on " + day);
 
   var whichMealWord = "Breakfast";
 
-  if(whichMeal === 1) whichMealWord = "Lunch";
-  if(whichMeal === 2) whichMealWord = "Dinner";
+  if(whichMealIndex === 1) whichMealWord = "Lunch";
+  if(whichMealIndex === 2) whichMealWord = "Dinner";
 
-  return (whichMealWord + "'s " + menu[day][whichMeal] + ".");
+  return (whichMealWord + "'s " + menu[day][whichMealIndex] + ".");
 }
 
 client.on('message', msg => {
