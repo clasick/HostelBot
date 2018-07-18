@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
+var CronJob = require('cron').CronJob;
 
 var menu = [
   ["Idly, Bonda", "Biriyani, Juice", "Noodles"],
@@ -78,5 +79,19 @@ client.on('message', msg => {
   }
 
 })
+
+var job = new CronJob('00 20 * * * *', function() {
+  /*
+   * Runs every weekday (Monday through Friday)
+   * at 11:30:00 AM. It does not run on Saturday
+   * or Sunday.
+   */
+    msg.channel.send("Time for dinner.");
+  }, function () {
+    /* This function is executed when the job stops */
+  },
+  false, /* Start the job right now */
+  timeZone /* Time zone of this job. */
+);
 
 client.login('NDUzNjA5NzY3Mzc4NjE2MzQw.Dfmg_w.hJsuCkm207ccmkGlL3EeneDQW5M');
