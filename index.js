@@ -65,7 +65,6 @@ client.on('message', msg => {
   }
 
   if(msg.content == '!isitwednesday') {
-
     var todayDate = new Date();
 
     if(todayDate.day == 3)
