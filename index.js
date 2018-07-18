@@ -63,6 +63,11 @@ client.on('message', msg => {
 
     msg.reply(getItem(todayDate.getDay(), todayDate.getHours()));
   }
+
+  if(msg.content == '!whatday') {
+    msg.channel.send({file : "https://i.kym-cdn.com/photos/images/newsfeed/001/091/264/665.jpg"});
+  }
+
 })
 
 client.login('NDUzNjA5NzY3Mzc4NjE2MzQw.Dfmg_w.hJsuCkm207ccmkGlL3EeneDQW5M');
