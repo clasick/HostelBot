@@ -64,7 +64,7 @@ client.on('message', msg => {
     msg.reply(getItem(todayDate.getDay(), todayDate.getHours()));
   }
 
-  if(msg.content == '!isitwednesday') {
+  if(msg.content === '!isitwednesday') {
     var todayDate = new Date();
 
     if(todayDate.day == 3)
