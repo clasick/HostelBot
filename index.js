@@ -93,19 +93,7 @@ var job = new CronJob('0 20 * * * *', function() {
   true /* Start the job right now */
 );
 
-
-var job = new CronJob('1 * * * * *', function() {
-  /*
-   * Runs every weekday (Monday through Friday)
-   * at 11:30:00 AM. It does not run on Saturday
-   * or Sunday.
-   */
-    client.channels.get('412502989983711267').send("1 min is up.");
-  }, function () {
-    /* This function is executed when the job stops */
-  },
-  true /* Start the job right now */
-);
+var count = 0;
 
 var job = new CronJob('0 7 * * * 3', function() {
   /*
