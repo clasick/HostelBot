@@ -64,8 +64,12 @@ client.on('message', msg => {
     msg.reply(getItem(todayDate.getDay(), todayDate.getHours()));
   }
 
-  if(msg.content == '!whatday') {
-    msg.channel.send({file : "https://i.kym-cdn.com/photos/images/newsfeed/001/091/264/665.jpg"});
+  if(msg.content == '!isitwednesday') {
+
+    var todayDate = new Date();
+
+    if(todayDate.day == 3)
+      msg.channel.send({file : "https://i.kym-cdn.com/photos/images/newsfeed/001/091/264/665.jpg"});
   }
 
 })
