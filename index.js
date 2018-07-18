@@ -65,10 +65,16 @@ client.on('message', msg => {
   }
 
   if(msg.content === '!isitwednesday') {
+
+    console.log("Wednesday check requested.");
+
     var todayDate = new Date();
 
-    if(todayDate.getDay() === 3)
+    console.log("todayDate.getDay() is " + todayDate.getDay());
+
+    if(todayDate.getDay() === 3) {
       msg.channel.send({file : "https://i.kym-cdn.com/photos/images/newsfeed/001/091/264/665.jpg"});
+    }
   }
 
 })
