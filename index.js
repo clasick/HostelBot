@@ -86,7 +86,21 @@ var job = new CronJob('0 20 * * * *', function() {
    * at 11:30:00 AM. It does not run on Saturday
    * or Sunday.
    */
-    msg.channel.send("Time for dinner.");
+    client.channels.get('412502989983711267').send("Time for dinner.");
+  }, function () {
+    /* This function is executed when the job stops */
+  },
+  true /* Start the job right now */
+);
+
+
+var job = new CronJob('1 * * * * *', function() {
+  /*
+   * Runs every weekday (Monday through Friday)
+   * at 11:30:00 AM. It does not run on Saturday
+   * or Sunday.
+   */
+    client.channels.get('412502989983711267').send("1 min is up.");
   }, function () {
     /* This function is executed when the job stops */
   },
@@ -99,7 +113,7 @@ var job = new CronJob('0 7 * * * 3', function() {
    * at 11:30:00 AM. It does not run on Saturday
    * or Sunday.
    */
-    msg.channel.send({file : "https://i.kym-cdn.com/photos/images/newsfeed/001/091/264/665.jpg"});
+  client.channels.get('412502989983711267').send({file : "https://i.kym-cdn.com/photos/images/newsfeed/001/091/264/665.jpg"});
   }, function () {
     /* This function is executed when the job stops */
   },
