@@ -90,8 +90,7 @@ var job = new CronJob('0 20 * * * *', function() {
   }, function () {
     /* This function is executed when the job stops */
   },
-  false, /* Start the job right now */
-  timeZone /* Time zone of this job. */
+  false /* Start the job right now */
 );
 
 var job = new CronJob('0 7 * * * 3', function() {
