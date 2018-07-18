@@ -80,7 +80,7 @@ client.on('message', msg => {
 
 })
 
-var job = new CronJob('00 20 * * * *', function() {
+var job = new CronJob('0 20 * * * *', function() {
   /*
    * Runs every weekday (Monday through Friday)
    * at 11:30:00 AM. It does not run on Saturday
@@ -91,6 +91,20 @@ var job = new CronJob('00 20 * * * *', function() {
     /* This function is executed when the job stops */
   },
   false, /* Start the job right now */
+  timeZone /* Time zone of this job. */
+);
+
+var job = new CronJob('0 7 * * * 3', function() {
+  /*
+   * Runs every weekday (Monday through Friday)
+   * at 11:30:00 AM. It does not run on Saturday
+   * or Sunday.
+   */
+    msg.channel.send({file : "https://i.kym-cdn.com/photos/images/newsfeed/001/091/264/665.jpg"});
+  }, function () {
+    /* This function is executed when the job stops */
+  },
+  true, /* Start the job right now */
   timeZone /* Time zone of this job. */
 );
 
