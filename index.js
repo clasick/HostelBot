@@ -83,7 +83,7 @@ client.on('message', msg => {
 // Dinner reminder 
 // Runs everyday at 8 PM
 
-var job = new CronJob('0 20 * * * *', function () {
+var job1 = new CronJob('0 20 * * * *', function () {
   var todayDate = new Date();
   client.channels.get('412502989983711267').send("Time to eat!");
   client.channels.get('412502989983711267'.send(getItem(todayDate.getDay(), todayDate.getHours())));
@@ -96,7 +96,7 @@ var job = new CronJob('0 20 * * * *', function () {
 // Breakfast reminder
 // runs everyday at 7AM
 
-var job = new CronJob('0 7 * * * *', function () {
+var job2 = new CronJob('0 7 * * * *', function () {
   var todayDate = new Date();
   client.channels.get('412502989983711267').send("Time to eat!");
   client.channels.get('412502989983711267'.send(getItem(todayDate.getDay(), todayDate.getHours())));
@@ -109,7 +109,7 @@ var job = new CronJob('0 7 * * * *', function () {
 // Lunch reminder (weekday)
 // runs at 2PM
 
-var job = new CronJob('0 14 * * * 1-5', function () {
+var job3 = new CronJob('0 14 * * * 1-5', function () {
   var todayDate = new Date();
   client.channels.get('412502989983711267').send("Time to eat!");
   client.channels.get('412502989983711267'.send(getItem(todayDate.getDay(), todayDate.getHours())));
@@ -122,7 +122,7 @@ var job = new CronJob('0 14 * * * 1-5', function () {
 // Lunch Reminder (weekend)
 // runs at 1PM
 
-var job = new CronJob('0 13 * * * 6-7', function () {
+var job4 = new CronJob('0 13 * * * 6-7', function () {
   var todayDate = new Date();
   client.channels.get('412502989983711267').send("Time to eat!");
   client.channels.get('412502989983711267'.send(getItem(todayDate.getDay(), todayDate.getHours())));
@@ -135,7 +135,7 @@ var job = new CronJob('0 13 * * * 6-7', function () {
 // It's wednesday my dudes!
 // Displays wednesday frog at 7AM on wednesdays
 
-var job = new CronJob('0 7 * * * 3', function () {
+var job5 = new CronJob('0 7 * * * 3', function () {
   client.channels.get('412502989983711267').send({ file: "https://i.kym-cdn.com/photos/images/newsfeed/001/091/264/665.jpg" });
 }, function () {
 },
