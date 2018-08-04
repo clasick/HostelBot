@@ -49,8 +49,8 @@ function getItem(day, x) {
 
   var whichMealWord = "Breakfast";
 
-  if(whichMealIndex === 1) whichMealWord = "Lunch";
-  if(whichMealIndex === 2) whichMealWord = "Dinner";
+  if (whichMealIndex === 1) whichMealWord = "Lunch";
+  if (whichMealIndex === 2) whichMealWord = "Dinner";
 
   return (whichMealWord + "'s " + menu[day][whichMealIndex] + ".");
 }
@@ -65,7 +65,7 @@ client.on('message', msg => {
     msg.reply(getItem(todayDate.getDay(), todayDate.getHours()));
   }
 
-  if(msg.content === '!isitwednesday') {
+  if (msg.content === '!isitwednesday') {
 
     console.log("Wednesday check requested.");
 
@@ -73,84 +73,73 @@ client.on('message', msg => {
 
     console.log("todayDate.getDay() is " + todayDate.getDay());
 
-    if(todayDate.getDay() === 3) {
-      msg.channel.send({file : "https://i.kym-cdn.com/photos/images/newsfeed/001/091/264/665.jpg"});
+    if (todayDate.getDay() === 3) {
+      msg.channel.send({ file: "https://i.kym-cdn.com/photos/images/newsfeed/001/091/264/665.jpg" });
     }
   }
 
 })
 
-var job = new CronJob('0 20 * * * *', function() {
-  /*
-   * Runs every weekday (Monday through Friday)
-   * at 11:30:00 AM. It does not run on Saturday
-   * or Sunday.
-   */
-    client.channels.get('412502989983711267').send("Time to eat!");
-    client.channels.get('412502989983711267'.send(getItem(todayDate.getDay(), todayDate.getHours())));
+// Dinner reminder 
+// Runs everyday at 8 PM
 
-  }, function () {
-    /* This function is executed when the job stops */
-  },
-  true /* Start the job right now */
+var job = new CronJob('0 20 * * * *', function () {
+  var todayDate = new Date();
+  client.channels.get('412502989983711267').send("Time to eat!");
+  client.channels.get('412502989983711267'.send(getItem(todayDate.getDay(), todayDate.getHours())));
+
+}, function () {
+},
+  true
 );
 
-var job = new CronJob('0 7 * * * *', function() {
-  /*
-   * Runs every weekday (Monday through Friday)
-   * at 11:30:00 AM. It does not run on Saturday
-   * or Sunday.
-   */
-    client.channels.get('412502989983711267').send("Time to eat!");
-    client.channels.get('412502989983711267'.send(getItem(todayDate.getDay(), todayDate.getHours())));
+// Breakfast reminder
+// runs everyday at 7AM
 
-  }, function () {
-    /* This function is executed when the job stops */
-  },
-  true /* Start the job right now */
+var job = new CronJob('0 7 * * * *', function () {
+  var todayDate = new Date();
+  client.channels.get('412502989983711267').send("Time to eat!");
+  client.channels.get('412502989983711267'.send(getItem(todayDate.getDay(), todayDate.getHours())));
+
+}, function () {
+},
+  true
 );
 
-var job = new CronJob('0 14 * * * 1-5', function() {
-  /*
-   * Runs every weekday (Monday through Friday)
-   * at 11:30:00 AM. It does not run on Saturday
-   * or Sunday.
-   */
-    client.channels.get('412502989983711267').send("Time to eat!");
-    client.channels.get('412502989983711267'.send(getItem(todayDate.getDay(), todayDate.getHours())));
+// Lunch reminder (weekday)
+// runs at 2PM
 
-  }, function () {
-    /* This function is executed when the job stops */
-  },
-  true /* Start the job right now */
+var job = new CronJob('0 14 * * * 1-5', function () {
+  var todayDate = new Date();
+  client.channels.get('412502989983711267').send("Time to eat!");
+  client.channels.get('412502989983711267'.send(getItem(todayDate.getDay(), todayDate.getHours())));
+
+}, function () {
+},
+  true
 );
 
-var job = new CronJob('0 13 * * * 6-7', function() {
-  /*
-   * Runs every weekday (Monday through Friday)
-   * at 11:30:00 AM. It does not run on Saturday
-   * or Sunday.
-   */
-    client.channels.get('412502989983711267').send("Time to eat!");
-    client.channels.get('412502989983711267'.send(getItem(todayDate.getDay(), todayDate.getHours())));
+// Lunch Reminder (weekend)
+// runs at 1PM
 
-  }, function () {
-    /* This function is executed when the job stops */
-  },
-  true /* Start the job right now */
+var job = new CronJob('0 13 * * * 6-7', function () {
+  var todayDate = new Date();
+  client.channels.get('412502989983711267').send("Time to eat!");
+  client.channels.get('412502989983711267'.send(getItem(todayDate.getDay(), todayDate.getHours())));
+
+}, function () {
+},
+  true
 );
 
-var job = new CronJob('0 7 * * * 3', function() {
-  /*
-   * Runs every weekday (Monday through Friday)
-   * at 11:30:00 AM. It does not run on Saturday
-   * or Sunday.
-   */
-  client.channels.get('412502989983711267').send({file : "https://i.kym-cdn.com/photos/images/newsfeed/001/091/264/665.jpg"});
-  }, function () {
-    /* This function is executed when the job stops */
-  },
-  true /* Start the job right now */
+// It's wednesday my dudes!
+// Displays wednesday frog at 7AM on wednesdays
+
+var job = new CronJob('0 7 * * * 3', function () {
+  client.channels.get('412502989983711267').send({ file: "https://i.kym-cdn.com/photos/images/newsfeed/001/091/264/665.jpg" });
+}, function () {
+},
+  true
 );
 
 client.login('NDUzNjA5NzY3Mzc4NjE2MzQw.Dfmg_w.hJsuCkm207ccmkGlL3EeneDQW5M');
