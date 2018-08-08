@@ -85,8 +85,8 @@ client.on('message', msg => {
 
 var job1 = new CronJob('0 20 * * * *', function () {
   var todayDate = new Date();
-  client.channels.get('412502989983711267').send("Time to eat!");
-  client.channels.get('412502989983711267').send(getItem(todayDate.getDay(), todayDate.getHours()));
+  client.channels.get('REMOVED').send("Time to eat!");
+  client.channels.get('REMOVED').send(getItem(todayDate.getDay(), todayDate.getHours()));
 
 }, function () {
 },
@@ -98,8 +98,8 @@ var job1 = new CronJob('0 20 * * * *', function () {
 
 var job2 = new CronJob('0 7 * * * *', function () {
   var todayDate = new Date();
-  client.channels.get('412502989983711267').send("Time to eat!");
-  client.channels.get('412502989983711267'.send(getItem(todayDate.getDay(), todayDate.getHours())));
+  client.channels.get('REMOVED').send("Time to eat!");
+  client.channels.get('REMOVED'.send(getItem(todayDate.getDay(), todayDate.getHours())));
 
 }, function () {
 },
@@ -111,8 +111,8 @@ var job2 = new CronJob('0 7 * * * *', function () {
 
 var job3 = new CronJob('0 14 * * * 1-5', function () {
   var todayDate = new Date();
-  client.channels.get('412502989983711267').send("Time to eat!");
-  client.channels.get('412502989983711267').send(getItem(todayDate.getDay(), todayDate.getHours()));
+  client.channels.get('REMOVED').send("Time to eat!");
+  client.channels.get('REMOVED').send(getItem(todayDate.getDay(), todayDate.getHours()));
 
 }, function () {
 },
@@ -124,8 +124,8 @@ var job3 = new CronJob('0 14 * * * 1-5', function () {
 
 var job4 = new CronJob('0 13 * * * 6-7', function () {
   var todayDate = new Date();
-  client.channels.get('412502989983711267').send("Time to eat!");
-  client.channels.get('412502989983711267').send(getItem(todayDate.getDay(), todayDate.getHours()));
+  client.channels.get('REMOVED').send("Time to eat!");
+  client.channels.get('REMOVED').send(getItem(todayDate.getDay(), todayDate.getHours()));
 
 }, function () {
 },
@@ -136,10 +136,10 @@ var job4 = new CronJob('0 13 * * * 6-7', function () {
 // Displays wednesday frog at 7AM on wednesdays
 
 var job5 = new CronJob('0 7 * * * 3', function () {
-  client.channels.get('412502989983711267').send({ file: "https://i.kym-cdn.com/photos/images/newsfeed/001/091/264/665.jpg" });
+  client.channels.get('REMOVED').send({ file: "https://i.kym-cdn.com/photos/images/newsfeed/001/091/264/665.jpg" });
 }, function () {
 },
   true
 );
 
-client.login('NDUzNjA5NzY3Mzc4NjE2MzQw.Dfmg_w.hJsuCkm207ccmkGlL3EeneDQW5M');
+client.login('REMOVED');
