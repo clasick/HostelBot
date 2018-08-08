@@ -86,7 +86,7 @@ client.on('message', msg => {
 var job1 = new CronJob('0 20 * * * *', function () {
   var todayDate = new Date();
   client.channels.get('412502989983711267').send("Time to eat!");
-  client.channels.get('412502989983711267'.send(getItem(todayDate.getDay(), todayDate.getHours())));
+  client.channels.get('412502989983711267').send(getItem(todayDate.getDay(), todayDate.getHours()));
 
 }, function () {
 },
@@ -112,7 +112,7 @@ var job2 = new CronJob('0 7 * * * *', function () {
 var job3 = new CronJob('0 14 * * * 1-5', function () {
   var todayDate = new Date();
   client.channels.get('412502989983711267').send("Time to eat!");
-  client.channels.get('412502989983711267'.send(getItem(todayDate.getDay(), todayDate.getHours())));
+  client.channels.get('412502989983711267').send(getItem(todayDate.getDay(), todayDate.getHours()));
 
 }, function () {
 },
@@ -125,7 +125,7 @@ var job3 = new CronJob('0 14 * * * 1-5', function () {
 var job4 = new CronJob('0 13 * * * 6-7', function () {
   var todayDate = new Date();
   client.channels.get('412502989983711267').send("Time to eat!");
-  client.channels.get('412502989983711267'.send(getItem(todayDate.getDay(), todayDate.getHours())));
+  client.channels.get('412502989983711267').send(getItem(todayDate.getDay(), todayDate.getHours()));
 
 }, function () {
 },
