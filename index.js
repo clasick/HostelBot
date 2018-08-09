@@ -85,6 +85,7 @@ client.on('message', msg => {
 
 var job1 = new CronJob('0 20 * * * *', function () {
   var todayDate = new Date();
+  console.log("Running cronjob for Dinner.");
   client.channels.get('REMOVED').send("Time to eat!");
   client.channels.get('REMOVED').send(getItem(todayDate.getDay(), todayDate.getHours()));
 
@@ -98,6 +99,7 @@ var job1 = new CronJob('0 20 * * * *', function () {
 
 var job2 = new CronJob('0 7 * * * *', function () {
   var todayDate = new Date();
+  console.log("Running cronjob for Breakfast.");
   client.channels.get('REMOVED').send("Time to eat!");
   client.channels.get('REMOVED'.send(getItem(todayDate.getDay(), todayDate.getHours())));
 
@@ -111,6 +113,7 @@ var job2 = new CronJob('0 7 * * * *', function () {
 
 var job3 = new CronJob('0 14 * * * 1-5', function () {
   var todayDate = new Date();
+  console.log("Running cronjob for Lunch. (weekday)");
   client.channels.get('REMOVED').send("Time to eat!");
   client.channels.get('REMOVED').send(getItem(todayDate.getDay(), todayDate.getHours()));
 
@@ -124,6 +127,7 @@ var job3 = new CronJob('0 14 * * * 1-5', function () {
 
 var job4 = new CronJob('0 13 * * * 6-7', function () {
   var todayDate = new Date();
+  console.log("Running cronjob for Lunch (weekend).");
   client.channels.get('REMOVED').send("Time to eat!");
   client.channels.get('REMOVED').send(getItem(todayDate.getDay(), todayDate.getHours()));
 
