@@ -83,7 +83,7 @@ client.on('message', msg => {
 // Dinner reminder 
 // Runs everyday at 8 PM
 
-var job1 = new CronJob('0 20 * * * *', function () {
+var job1 = new CronJob('0 20 * * 0-6', function () {
   var todayDate = new Date();
   console.log("Running cronjob for Dinner.");
   client.channels.get('REMOVED').send("Time to eat!");
@@ -97,7 +97,7 @@ var job1 = new CronJob('0 20 * * * *', function () {
 // Breakfast reminder
 // runs everyday at 7AM
 
-var job2 = new CronJob('0 7 * * * *', function () {
+var job2 = new CronJob('0 7 * * 0-6', function () {
   var todayDate = new Date();
   console.log("Running cronjob for Breakfast.");
   client.channels.get('REMOVED').send("Time to eat!");
@@ -111,7 +111,7 @@ var job2 = new CronJob('0 7 * * * *', function () {
 // Lunch reminder (weekday)
 // runs at 2PM
 
-var job3 = new CronJob('0 14 * * * 1-5', function () {
+var job3 = new CronJob('0 13 * * 1-5', function () {
   var todayDate = new Date();
   console.log("Running cronjob for Lunch. (weekday)");
   client.channels.get('REMOVED').send("Time to eat!");
@@ -125,7 +125,7 @@ var job3 = new CronJob('0 14 * * * 1-5', function () {
 // Lunch Reminder (weekend)
 // runs at 1PM
 
-var job4 = new CronJob('0 13 * * * 6-7', function () {
+var job4 = new CronJob('0 13 * * 6,0', function () {
   var todayDate = new Date();
   console.log("Running cronjob for Lunch (weekend).");
   client.channels.get('REMOVED').send("Time to eat!");
@@ -139,7 +139,7 @@ var job4 = new CronJob('0 13 * * * 6-7', function () {
 // It's wednesday my dudes!
 // Displays wednesday frog at 7AM on wednesdays
 
-var job5 = new CronJob('0 7 * * * 3', function () {
+var job5 = new CronJob('0 7 * * 3', function () {
   client.channels.get('REMOVED').send({ file: "https://i.kym-cdn.com/photos/images/newsfeed/001/091/264/665.jpg" });
 }, function () {
 },
